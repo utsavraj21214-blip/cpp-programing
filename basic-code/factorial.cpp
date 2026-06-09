@@ -2,37 +2,20 @@
 using namespace std;
 
 class Factorial {
-private:
-    int num;
-    long long fact;
-
 public:
-    void getNumber() {
-        cout << "Enter a number: ";
-        cin >> num;
-    }
+    int n;
+    long long f = 1;
 
-    void calculateFactorial() {
-        if(num < 0) {
-            cout << "Factorial of negative number does not exist." << endl;
-        }
-        else {
-            fact = 1;
-
-            for(int i = 1; i <= num; i++) {
-                fact = fact * i;
-            }
-
-            cout << "Factorial of " << num << " = " << fact << endl;
-        }
+    void fact() {
+        cin >> n;
+        for(int i = 1; i <= n; i++)
+            f *= i;
+        cout << "Factorial = " << f;
     }
 };
 
 int main() {
-    Factorial f;
-
-    f.getNumber();
-    f.calculateFactorial();
-
+    Factorial obj;
+    obj.fact();
     return 0;
 }
